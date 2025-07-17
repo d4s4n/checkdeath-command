@@ -1,0 +1,69 @@
+{
+  "name": "checkdeath-command",
+  "version": "1.0.4",
+  "description": "Добавляет команду для автоматической проверки и кика игроков с большим кол-во смертей.",
+  "main": "index.js",
+  "author": "I_Sahorok",
+  "botpanel": {
+    "categories": [
+      "Клан",
+      "Автоматизация",
+	  "Команды"
+    ],
+    "icon": "skull",
+	"supportedHosts": [
+      "mc.mineblaze.net",
+      "mc.masedworld.net",
+      "mc.cheatmine.net",
+      "mc.dexland.org"
+    ],
+    "dependencies": {
+      "parser-keksik": "*"
+    },
+    "settings": {
+      "deathsToKick": {
+        "type": "number",
+        "label": "Смертей для кика",
+        "description": "При каком количестве смертей игрок будет кикнут во время проверки.",
+        "default": 5
+      },
+      "checkInterval": {
+        "type": "number",
+        "label": "Интервал между проверками (мс)",
+        "description": "Задержка в миллисекундах между проверкой статистики каждого игрока.",
+        "default": 1500
+      },
+      "startMessage": {
+        "type": "string",
+        "label": "Сообщение о начале проверки",
+        "default": "Начинаю проверку игроков на количество смертей..."
+      },
+      "stopMessage": {
+        "type": "string",
+        "label": "Сообщение об остановке проверки",
+        "default": "Проверка смертей остановлена вручную."
+      },
+      "finishMessage": {
+        "type": "string",
+        "label": "Сообщение о завершении проверки",
+        "description": "Используйте {kickedCount} для количества кикнутых.",
+        "default": "Проверка завершена. Кикнуто игроков: {kickedCount}."
+      },
+      "noPlayersMessage": {
+        "type": "string",
+        "label": "Сообщение 'Нет игроков'",
+        "default": "Некого проверять, кроме владельца клана и модераторов."
+      },
+      "noPermsMessage": {
+        "type": "string",
+        "label": "Сообщение 'Нет прав'",
+        "default": "У бота нет прав для просмотра статистики игроков (/c stats)."
+      },
+      "clanInfoErrorMessage": {
+        "type": "string",
+        "label": "Сообщение 'Ошибка инфо'",
+        "default": "Не удалось получить информацию о клане для начала проверки."
+      }
+    }
+  }
+}
